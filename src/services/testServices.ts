@@ -1,5 +1,6 @@
 import { Tests } from "@prisma/client";
 import { TTestData } from "../types/testType";
+import * as termServices from './termServices';
 import * as testRepository from '../repositories/testRepository';
 
 export async function createTest(testData: TTestData) {
@@ -8,8 +9,8 @@ export async function createTest(testData: TTestData) {
   return test;
 }
 
-export async function getTests() {
-  const tests: Tests[] = await testRepository.getTests();
+export async function getTestsByDiscipline() {
+  const tests = await termServices.getTests();
 
   return tests;
 }

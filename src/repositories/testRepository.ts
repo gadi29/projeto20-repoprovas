@@ -7,9 +7,3 @@ export async function createTest(testData: TTestData) {
 
   return test;
 }
-
-export async function getTests() {
-  const tests: Tests[] = await prisma.tests.findMany();
-
-  return tests;
-}
