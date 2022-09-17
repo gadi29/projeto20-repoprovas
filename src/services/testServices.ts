@@ -5,15 +5,10 @@ import * as teacherServices from './teacherServices';
 import * as termServices from './termServices';
 import * as testRepository from '../repositories/testRepository';
 
-async function existCategory(categoryId: number) {
-  const category: Categories = await categoryServices.getCategoryById(categoryId);
-  if (!category) throw { type: 'not_found', message: 'Category not found!' }
-
-  return;
-}
-
 export async function createTest(testData: TTestData) {
-  existCategory(testData.categoryId);
+  const category: Categories = await categoryServices.getCategoryById(testData.categoryId);
+  if (!category) throw { type: 'not_found', message: 'Category not found' };
+
   const test: Tests = await testRepository.createTest(testData);
 
   return test;
