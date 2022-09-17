@@ -9,5 +9,7 @@ export async function createTest(testData: TTestData) {
 }
 
 export async function getTests() {
-  const tests: Tests[] = ;
+  const tests: Tests[] = await testRepository.getTests();
+
+  return tests;
 }

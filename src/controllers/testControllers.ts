@@ -11,6 +11,6 @@ export async function createTest(req: Request, res: Response) {
 }
 
 export async function getTests(req: Request, res: Response) {
-  const tests = '';
+  const tests = await testService.getTests();
   res.status(200).send(tests);
 }
