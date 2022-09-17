@@ -9,6 +9,6 @@ const testRouter = Router();
 
 testRouter.post('/test', authenticateUser, validateSchemaMiddleware(testSchema), createTest);
 testRouter.get('/tests/disciplines', authenticateUser, getTestsByDiscipline);
-testRouter.get('/tests/teachers', authenticateUser, getTestsByTeachers)
+testRouter.get('/tests/teachers', authenticateUser, getTestsByTeachers);
 
 export default testRouter;

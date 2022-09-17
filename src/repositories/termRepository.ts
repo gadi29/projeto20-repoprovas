@@ -18,6 +18,11 @@ export async function getTests() {
                 select: {
                   name: true,
                   pdfUrl: true,
+                  category: {
+                    select: {
+                      name: true,
+                    },
+                  }
                 }
               }
             }
