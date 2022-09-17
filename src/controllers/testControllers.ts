@@ -7,7 +7,7 @@ export async function createTest(req: Request, res: Response) {
   const newTest: TTestData = req.body;
 
   const test: Tests = await testService.createTest(newTest);
-  res.status(201).send(`Test: '${test.name}' registered successfully!`);
+  res.status(201).send(`Test '${test.name}' registered successfully!`);
 }
 
 export async function getTestsByDiscipline(req: Request, res: Response) {
