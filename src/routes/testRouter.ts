@@ -8,5 +8,6 @@ import testSchema from "../schemas/testSchema";
 const testRouter = Router();
 
 testRouter.post('/test', authenticateUser, validateSchemaMiddleware(testSchema), createTest);
+testRouter.get('/tests', authenticateUser)
 
 export default testRouter;
