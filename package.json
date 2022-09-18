@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/server.js",
   "scripts": {
-    "build": "tsc && npx prisma migrate deploy && prisma db seed",
+    "build": "tsc && npx prisma migrate deploy",
     "start": "node dist/server.js",
     "test": "dotenv -e .env.test prisma migrate dev && dotenv -e .env.test prisma db seed && dotenv -e .env.test jest -i",
     "dev": "nodemon src/server.ts"
