@@ -9,7 +9,7 @@ const agent = supertest(app);
 
 
 describe("Test POST /test", () => {
-  it("Should return 201 if successful", async () => { //não encontra usuário
+  it("Should return 201 if successful", async () => {
     const user = await userFactory();
     const userSignIn = { email: user.email, password: user.password };
 
@@ -31,7 +31,7 @@ describe("Test POST /test", () => {
     expect(result.status).toBe(401);
   });
 
-  it("Should return 404 if don't have the category in database", async () => { //404 por não encontrar usuário
+  it("Should return 404 if don't have the category in database", async () => {
     const user = await userFactory();
     const userSignIn = { email: user.email, password: user.password };
 
